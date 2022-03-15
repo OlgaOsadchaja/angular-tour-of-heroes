@@ -1,10 +1,69 @@
 <div *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
+  <div><span>HP: </span>{{hero.hp}}</div>
+  <div><span>Level: </span>{{hero.level}}</div>
+  <div><span>Weapons: </span>{{hero.weapons}}</div>
+  <div><span>Stamina: </span>{{hero.stamina}}</div>
+  <div><span>Race: </span>{{hero.race}}</div>
+
   <div>
     <label for="hero-name">Hero name: </label>
     <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
   </div>
+
+  <div>
+    <label for="hp">HP: </label>
+    <input type="number" id="hp" [(ngModel)]="hero.hp" #herohp="ngModel" placeholder="100" min="100" step="100" required/>
+    <div *ngIf="herohp.invalid && (herohp.dirty || herohp.touched)">
+      <div *ngIf="herohp.errors">
+        Incorrect value        
+      </div>      
+    </div>
+  </div>
+
+  <div>
+    <label for="level">Level: </label>
+    <input type="number" id="level" [(ngModel)]="hero.level" #herolevel="ngModel"  placeholder="1" min="1" max="100" required/>
+    <div *ngIf="herolevel.invalid && (herolevel.dirty || herolevel.touched)">
+      <div *ngIf="herolevel.errors">
+        Incorrect value        
+      </div>      
+    </div>
+  </div>
+
+  <div class="lists">
+    <div class="listsTitle">Weapons:</div>
+    <select  [(ngModel)]="hero.weapons" class="listoption">
+      <option value="swords">swords</option>
+      <option value="claymores">claymores</option>
+      <option value="polearms">polearms</option>
+      <option value="catalysts">catalysts</option>
+      <option value="bows">bows</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="stamina">Stamina: </label>
+    <input type="number" id="stamina" [(ngModel)]="hero.stamina" #herostam="ngModel" placeholder="100" min="100" step="10" required/>
+    <div *ngIf="herostam.invalid && (herostam.dirty || herostam.touched)">
+      <div *ngIf="herostam.errors">
+        Incorrect value        
+      </div>      
+    </div>
+  </div>
+  
+  <div class="lists">
+    <div class="listsTitle">Race:</div> 
+    <select  [(ngModel)]="hero.race" class="listoption">
+      <option value="witch">witch</option>
+      <option value="fairy">fairy</option>
+      <option value="kitsune">kitsune</option>
+      <option value="tengu ">tengu</option>
+      <option value="pixie">pixie</option>
+    </select>
+  </div>
+
   <button type="button" (click)="goBack()">go back</button>
   <button type="button" (click)="save()">save</button>
 </div>

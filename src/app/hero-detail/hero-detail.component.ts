@@ -39,4 +39,16 @@ export class HeroDetailComponent implements OnInit {
         .subscribe(() => this.goBack());
     }
   }
+  
+  // validation(event: any) {
+  //   const min = 1;
+  //   const max = 100;
+
+  //   if (+event.target.value < min || +event.target.value > max) {
+  //     alert('Error');
+      
+  //   } else {
+  //     this.save();
+  //   }
+  // }
 }
