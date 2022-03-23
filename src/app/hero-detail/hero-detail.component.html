@@ -9,7 +9,7 @@
 
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+    <input id="hero-name" [(ngModel)]="hero.name" #heroname="ngModel" placeholder="Hero name" required/>
   </div>
 
   <div>
@@ -29,7 +29,7 @@
       <div *ngIf="herolevel.errors">
         Incorrect value        
       </div>      
-    </div>
+    </div>     
   </div>
 
   <div class="lists">
@@ -65,5 +65,5 @@
   </div>
 
   <button type="button" (click)="goBack()">go back</button>
-  <button type="button" (click)="save()">save</button>
+  <button [disabled]="heroname.invalid || herohp.invalid || herolevel.invalid || herostam.invalid" type="button" (click)="save()">save</button>
 </div>

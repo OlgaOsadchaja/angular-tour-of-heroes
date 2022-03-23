@@ -15,6 +15,10 @@ input {
   margin: .5em 0;
 }
 
+input.ng-invalid{
+  border:solid red 2px;
+}
+
 button {
   margin-top: 20px;
   margin-right: 10px;
