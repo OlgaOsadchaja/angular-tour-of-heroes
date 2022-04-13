@@ -88,3 +88,24 @@ button.delete:hover {
   background-color: #525252;
   color: white;
 }
+
+.newhero{
+  margin-bottom: 2em;
+}
+
+.newhero a{
+  padding: .5rem 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-decoration: none;
+  background-color: rgb(232, 232, 232);
+  border-color: #2c3a41;
+  border-radius: 4px;
+}
+
+.newhero a:hover{
+  color: white;
+  background-color: #42545C;
+}
+

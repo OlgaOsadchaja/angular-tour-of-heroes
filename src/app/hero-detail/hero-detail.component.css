@@ -15,7 +15,7 @@ input {
   margin: .5em 0;
 }
 
-input.ng-invalid{
+input.ng-invalid.ng-touched{
   border:solid red 2px;
 }
 
