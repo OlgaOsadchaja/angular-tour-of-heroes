@@ -4,9 +4,17 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 
+interface weapon {
+  id: number;
+  name: string;
+}
+
+interface race {
+  name: string;
+}
 
 @Component({
   selector: 'app-hero-detail',
@@ -16,6 +24,22 @@ import { Router } from '@angular/router'
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
   viewMode: boolean = true;
+
+  weapons: weapon[] = [
+    {id: 1, name: 'swords'},
+    {id: 2, name: 'claymores'},
+    {id: 3, name: 'polearms'},
+    {id: 4, name: 'catalysts'},
+    {id: 5, name: 'bows'},
+  ];
+
+  races: race[] = [
+    {name: 'witch'},
+    {name: 'fairy'},
+    {name: 'kitsune'},
+    {name: 'tengu'},
+    {name: 'pixie'},
+  ];
 
   constructor(
     private route: ActivatedRoute,

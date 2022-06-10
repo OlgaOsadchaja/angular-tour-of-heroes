@@ -39,13 +39,11 @@
   
     <div class="lists">
       <div class="listsTitle">Weapons:</div>
-      <select  [(ngModel)]="hero.weapons" class="listoption">
-        <option value="swords">swords</option>
-        <option value="claymores">claymores</option>
-        <option value="polearms">polearms</option>
-        <option value="catalysts">catalysts</option>
-        <option value="bows">bows</option>
-      </select>
+        <select [(ngModel)]="hero.weapons" #heroweapons="ngModel" class="listoption" required>
+          <option *ngFor="let weapon of weapons" [value]="weapon.name">
+            {{weapon.name}}
+          </option>
+        </select>
     </div>
   
     <div>
@@ -60,16 +58,14 @@
     
     <div class="lists">
       <div class="listsTitle">Race:</div> 
-      <select  [(ngModel)]="hero.race" class="listoption">
-        <option value="witch">witch</option>
-        <option value="fairy">fairy</option>
-        <option value="kitsune">kitsune</option>
-        <option value="tengu ">tengu</option>
-        <option value="pixie">pixie</option>
+      <select  [(ngModel)]="hero.race" #herorace="ngModel" class="listoption" required>
+        <option *ngFor="let race of races" [value]="race.name">
+          {{race.name}}
+        </option>
       </select>
     </div>
   
     <button type="button" (click)="goBack()">go back</button>
-    <button [disabled]="heroname.invalid || (herohp.invalid && herohp.touched) || herolevel.invalid || herostam.invalid" type="button" (click)="save()">save</button>  
+    <button [disabled]="heroname.invalid || (herohp.invalid && herohp.touched) || herolevel.invalid || herostam.invalid  || herorace.invalid || heroweapons.invalid " type="button" (click)="save()">save</button>  
   </div>
   </div>

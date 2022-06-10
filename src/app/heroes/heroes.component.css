@@ -1,6 +1,5 @@
-/* HeroesComponent's private CSS styles */
 .heroes {
-  margin: 0 0 2em 0;
+  margin: 0 0 2em 0 !important;
   list-style-type: none;
   padding: 0;
   width: 15em;
@@ -8,7 +7,7 @@
 
 input {
   display: block;
-  width: 100%;
+  width: 400px;
   padding: .5rem;
   margin: 1rem 0;
   box-sizing: border-box;
@@ -63,45 +62,32 @@ input {
 }
 
 .add-button {
- padding: .5rem 1.5rem;
+ padding: .5rem 1.65rem;
  font-size: 1rem;
- margin-bottom: 2rem;
+ margin-bottom: 1rem;
+ background-color: rgb(232, 232, 232);
+ border: 1px solid #42545C;
+ border-radius: 4px;
 }
 
 .add-button:hover {
-  color: white;
+  color: white !important;
   background-color: #42545C;
 }
 
-button.delete {
-  position: absolute;
-  left: 210px;
-  top: 5px;
-  background-color: white;
-  color:  #525252;
-  font-size: 1.1rem;
-  margin: 0;
-  padding: 1px 10px 3px 10px;
-}
-
-button.delete:hover {
-  background-color: #525252;
-  color: white;
-}
-
 .newhero{
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 .newhero a{
   padding: .5rem 1.5rem;
   font-size: 1rem;
-  margin-bottom: 2rem;
   color: #333;
   text-decoration: none;
   background-color: rgb(232, 232, 232);
-  border-color: #2c3a41;
+  border: 1px solid #42545C;
   border-radius: 4px;
+  font-family: Cambria, Georgia;
 }
 
 .newhero a:hover{
@@ -109,3 +95,41 @@ button.delete:hover {
   background-color: #42545C;
 }
 
+table{
+  width: 100%;
+}
+
+.mat-column-hero-id {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-hero-name {
+  width: 300px;
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-hero-level {
+  width: 40px;
+  padding-left: 16px;
+  padding-right: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
