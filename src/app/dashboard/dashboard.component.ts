@@ -10,7 +10,8 @@ import { HeroService } from '../hero.service';
 
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-
+  raceStyle: string="";
+  
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
@@ -22,4 +23,25 @@ export class DashboardComponent implements OnInit {
       .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
 
+  setCardStyle(race: string) {
+    switch (race) {
+      case 'witch':
+        this.raceStyle = 'witch';
+        break;
+      case 'fairy':
+        this.raceStyle = 'fairy';
+        break;  
+      case 'kitsune':
+        this.raceStyle = 'kitsune';
+        break;   
+      case 'tengu':
+        this.raceStyle = 'tengu';
+        break;  
+      case 'pixie':
+        this.raceStyle = 'pixie';
+        break;      
+    }
+  }
+
+  
 }

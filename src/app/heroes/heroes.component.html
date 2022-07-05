@@ -1,12 +1,5 @@
 <h2>My Heroes</h2>
 
-<div>
-  <input id="new-hero" #heroName placeholder="Hero name" />
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-    Add hero
-  </button>
-</div>
-
 <nav class="newhero">
   <a routerLink="/hero/new">New Hero</a>
 </nav>
@@ -40,8 +33,35 @@
 
     <!--Weapons Column -->
     <ng-container matColumnDef="hero-weapons">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Weapons </th>
-      <td mat-cell *matCellDef="let hero"> {{hero.weapons}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Weapon </th>
+      <td mat-cell *matCellDef="let hero"> {{hero.weapon}} </td>
+    </ng-container>
+
+    <!--Stamina Column -->
+    <ng-container matColumnDef="hero-stamina">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Stamina </th>
+      <td mat-cell *matCellDef="let hero"> {{hero.stamina}} </td>
+    </ng-container>
+
+    <!--Race Column -->
+    <ng-container matColumnDef="hero-race">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Race </th>
+      <td mat-cell *matCellDef="let hero"> {{hero.race}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hero-edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let hero">
+          <a routerLink="/detail/{{hero.id}}">Edit</a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hero-delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let hero">
+        <button type="button" class="delete" title="delete hero"
+        (click)="delete(hero)">x</button>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

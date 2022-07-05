@@ -4,7 +4,7 @@
     <div><span>id: </span>{{hero.id}}</div>
     <div><span>HP: </span>{{hero.hp}}</div>
     <div><span>Level: </span>{{hero.level}}</div>
-    <div><span>Weapons: </span>{{hero.weapons}}</div>
+    <div><span>Weapons: </span>{{hero.weapon}}</div>
     <div><span>Stamina: </span>{{hero.stamina}}</div>
     <div><span>Race: </span>{{hero.race}}</div>
     <button type="button" (click)="goBack()">Go back</button>
@@ -39,9 +39,9 @@
   
     <div class="lists">
       <div class="listsTitle">Weapons:</div>
-        <select [(ngModel)]="hero.weapons" #heroweapons="ngModel" class="listoption" required>
-          <option *ngFor="let weapon of weapons" [value]="weapon.name">
-            {{weapon.name}}
+        <select [(ngModel)]="hero.weapon" #heroweapon="ngModel" class="listoption" required>
+          <option *ngFor="let Weapon of weapons" [value]="Weapon.name">
+            {{Weapon.name}}
           </option>
         </select>
     </div>
@@ -59,13 +59,13 @@
     <div class="lists">
       <div class="listsTitle">Race:</div> 
       <select  [(ngModel)]="hero.race" #herorace="ngModel" class="listoption" required>
-        <option *ngFor="let race of races" [value]="race.name">
-          {{race.name}}
+        <option *ngFor="let Race of races" [value]="Race.name">
+          {{Race.name}}
         </option>
       </select>
     </div>
   
     <button type="button" (click)="goBack()">go back</button>
-    <button [disabled]="heroname.invalid || (herohp.invalid && herohp.touched) || herolevel.invalid || herostam.invalid  || herorace.invalid || heroweapons.invalid " type="button" (click)="save()">save</button>  
+    <button [disabled]="heroname.invalid || (herohp.invalid && herohp.touched) || herolevel.invalid || herostam.invalid  || herorace.invalid || heroweapon.invalid " type="button" (click)="save()">save</button>  
   </div>
   </div>

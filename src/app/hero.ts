@@ -3,7 +3,7 @@ export interface Hero {
     name: string;
     hp: number;
     level: number;
-    weapons: string;
+    weapon: string;
     stamina: number;
     race: string;
   }

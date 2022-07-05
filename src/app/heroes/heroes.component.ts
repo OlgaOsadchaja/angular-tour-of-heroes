@@ -15,7 +15,7 @@ import {MatSort} from '@angular/material/sort';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
-  displayedColumns: string[] = ['hero-id','hero-name','hero-hp','hero-level','hero-weapons'];
+  displayedColumns: string[] = ['hero-id','hero-name','hero-hp','hero-level','hero-weapons','hero-stamina','hero-race','hero-edit','hero-delete'];
   dataSource!: MatTableDataSource<Hero>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -60,6 +60,12 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
+    this.heroService.getHeroes()
+      .subscribe(dataSource => {
+        this.dataSource = new MatTableDataSource<Hero>(dataSource);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      });
   }
 
 }

@@ -112,12 +112,63 @@ table{
   font-size: 20px;
 }
 
+.mat-column-hero-hp {
+  width: 40px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
 .mat-column-hero-level {
   width: 40px;
-  padding-left: 16px;
+  padding-left: 10px;
   padding-right: 20px;
-  text-align: center;
   font-weight: bold;
+}
+
+.mat-column-hero-edit {
+  width: 32px;
+  border-left: 1px solid currentColor;
+  padding-left: 12px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-hero-edit a{
+  padding: .3rem 1rem;
+  color: #333;
+  text-decoration: none;
+  background-color: rgb(232, 232, 232);
+  border: 1px solid #42545C;
+  border-radius: 4px;
+  font-family: Cambria, Georgia;
+}
+
+.mat-column-hero-edit a:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+.mat-column-hero-delete {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-hero-delete button{
+  padding: .3rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  background-color: rgb(232, 232, 232);
+  border: 1px solid #42545C;
+  border-radius: 4px;
+  font-family: Cambria, Georgia;
+  font-weight: bolder;
+}
+
+.mat-column-hero-delete button:hover {
+  color: white;
+  background-color: red;
 }
 
 .mat-row .mat-cell {
@@ -128,8 +179,4 @@ table{
 
 .mat-row:hover .mat-cell {
   border-color: currentColor;
-}
-
-.demo-row-is-clicked {
-  font-weight: bold;
 }

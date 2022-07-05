@@ -5,16 +5,9 @@ import { Location } from '@angular/common';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Router } from '@angular/router';
+import { Weapon, weapons } from '../shared/interfaces/weapon';
+import { Race, races } from '../shared/interfaces/race';
 
-
-interface weapon {
-  id: number;
-  name: string;
-}
-
-interface race {
-  name: string;
-}
 
 @Component({
   selector: 'app-hero-detail',
@@ -23,23 +16,9 @@ interface race {
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
+  weapons: Weapon[] = weapons; 
+  races: Race[] = races;
   viewMode: boolean = true;
-
-  weapons: weapon[] = [
-    {id: 1, name: 'swords'},
-    {id: 2, name: 'claymores'},
-    {id: 3, name: 'polearms'},
-    {id: 4, name: 'catalysts'},
-    {id: 5, name: 'bows'},
-  ];
-
-  races: race[] = [
-    {name: 'witch'},
-    {name: 'fairy'},
-    {name: 'kitsune'},
-    {name: 'tengu'},
-    {name: 'pixie'},
-  ];
 
   constructor(
     private route: ActivatedRoute,
