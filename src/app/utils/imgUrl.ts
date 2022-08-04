@@ -1,0 +1,1 @@
+export const imgUrl = ['../assets/img/sword.jpg', '../assets/img/claymore.jpg', '../assets/img/polearm.jpg', '../assets/img/сatalyst.jpg', '../assets/img/bow.jpg'];

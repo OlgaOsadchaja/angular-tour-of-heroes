@@ -65,6 +65,7 @@ a {
 }
 
 .card-img {
+  /* background: url(сatalyst.png); */
   position: absolute;
   right: 10px;
   bottom: 10px;

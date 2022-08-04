@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { imgUrl } from '../utils/imgUrl';
+import { Weapon, weapons } from '../shared/interfaces/weapon';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +12,8 @@ import { HeroService } from '../hero.service';
 
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  imgUrl: string[] = imgUrl;
+  weapon: Weapon[] = weapons;
   raceStyle: string="";
   
   constructor(private heroService: HeroService) { }
@@ -18,9 +22,13 @@ export class DashboardComponent implements OnInit {
     this.getHeroes();
   }
 
-  getHeroes(): void {
+  getHeroes() {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+  }
+
+  getImg(weapon: string) {
+    return this.imgUrl[this.weapon.findIndex(el => el.name === weapon)];
   }
 
   setCardStyle(race: string) {
@@ -42,6 +50,4 @@ export class DashboardComponent implements OnInit {
         break;      
     }
   }
-
-  
 }

@@ -8,8 +8,8 @@
         <p>{{hero.race}}</p>
         <p>HP: {{hero.hp}}</p>
         <p>Level: {{hero.level}}</p>
-        <!-- <img src="../shared/i.jpg" alt="card img" class="card-img"> -->
+        <img [src]="getImg(hero.weapon)" alt="card img" class="card-img">
       </div>
-  </a>
+    </a>
 </div>
 <app-hero-search></app-hero-search>
