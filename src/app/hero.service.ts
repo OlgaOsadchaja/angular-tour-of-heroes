@@ -6,12 +6,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './hero';
 import { MessageService } from './message.service';
+import {TranslateService} from "@ngx-translate/core";
 
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
   private heroesUrl = 'api/heroes';  // URL to web api
+  messageName = '';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +21,8 @@ export class HeroService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    public translate: TranslateService) { }
 
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
@@ -118,6 +121,9 @@ export class HeroService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.translate.get('COMMON.MESSAGES.HEROSERVICE').subscribe((res: string) => {
+      this.messageName = res;
+  }); 
+    this.messageService.add(`${ this.messageName }: ${message}`);
   }
 }

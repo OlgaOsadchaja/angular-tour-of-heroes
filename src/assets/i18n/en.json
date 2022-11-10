@@ -1,6 +1,54 @@
 {
-    "BUTTONS": {
-        "HEROES": "Heroes",
-        "DASHBOARD": "Dashboard"
+    "LABELS": {
+        "APP": {
+            "TITLE": "Tour of heroes",
+            "MYHEROES": "My Heroes",
+            "TOPHEROES": "Top Heroes",
+            "NEWHERO": "New Hero",
+            "SEARCH": "Search",
+            "HEROSEARCH": "Hero Search",
+            "DETAILS": "Details",
+            "INCORRECTVALUE": "Incorrect value"
+        },
+
+        "TABLE": {
+            "HERONAME": "Hero name",
+            "ID": "Id",
+            "NAME": "Name",
+            "HP": "Hp",
+            "LEVEL": "Level",
+            "WEAPON": "Weapon",
+            "STAMINA": "Stamina",
+            "RACE": "Race"
+        },
+
+        "WEAPONS": {
+            "SWORD": "sword",
+            "CLAYMORE": "claymore",
+            "POLEARM": "polearm",
+            "CATALYST": "catalyst",
+            "BOW": "bow"            
+        }
+    },
+
+    "COMMON": {
+        "BUTTONS": {
+            "HEROES": "Heroes",
+            "DASHBOARD": "Dashboard",
+            "EDIT": "Edit",
+            "DELETE": "Delete",
+            "GOBACK": "Go back",
+            "SAVE": "Save"
+        },
+        
+        "MESSAGES": {
+            "HEROSERVICE": "HeroService"
+        },
+
+        "CLICK": {
+            "CLICKLOG": "Click Log",
+            "CLICKED": "Clicked rows will be logged here",
+            "CLICKEDON": "Clicked on"
+        }
     }
 }

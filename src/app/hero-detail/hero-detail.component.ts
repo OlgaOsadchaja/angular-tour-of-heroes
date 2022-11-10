@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Router } from '@angular/router';
-import { Weapon, weapons } from '../shared/interfaces/weapon';
+import { Weapon, weapons, weaponsRu } from '../shared/interfaces/weapon';
 import { Race, races } from '../shared/interfaces/race';
+import { TranslateService } from "@ngx-translate/core";
 
 
 @Component({
@@ -16,7 +17,7 @@ import { Race, races } from '../shared/interfaces/race';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
-  weapons: Weapon[] = weapons; 
+  weapons: Weapon[] = weaponsRu; 
   races: Race[] = races;
   viewMode: boolean = true;
 
@@ -24,19 +25,27 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    public translate: TranslateService
   ) { }
 
   ngOnInit(): void {
-    var param = this.route.snapshot.paramMap.get('id');
+    let param = this.route.snapshot.paramMap.get('id');
     if (param) {
       this.getHero();
       this.viewMode = true;
     } else {
       this.hero = {} as Hero;
       this.viewMode = false;
-    }
+    }    
+
+    // this.translate.currentLang === 'ru' ? this.weapons = weaponsRu : this.weapons = weapons; 
   }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this.translate.currentLang === 'ru' ? this.weapons = weaponsRu : null; 
+  //   console.log(changes, this.translate.currentLang);
+  // }
 
   getHero(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);

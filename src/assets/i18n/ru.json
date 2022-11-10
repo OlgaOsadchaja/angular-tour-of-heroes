@@ -1,0 +1,54 @@
+{
+    "LABELS": {
+        "APP": {
+            "TITLE": "Тур героев",
+            "MYHEROES": "Мои герои",
+            "TOPHEROES": "Лучшие герои",
+            "NEWHERO": "Новый герой",
+            "SEARCH": "Поиск",
+            "HEROSEARCH": "Поиск героя",
+            "DETAILS": "Подробности",
+            "INCORRECTVALUE": "Неверное значение"
+        },
+
+        "TABLE": {
+            "HERONAME": "Имя героя",
+            "ID": "№",
+            "NAME": "Имя",
+            "HP": "Hp",
+            "LEVEL": "Уровень",
+            "WEAPON": "Оружие",
+            "STAMINA": "Выносливость",
+            "RACE": "Раса"
+        },
+
+        "WEAPONS": {
+            "SWORD": "меч",
+            "CLAYMORE": "двуручный меч",
+            "POLEARM": "копьё",
+            "CATALYST": "магия",
+            "BOW": "лук"            
+        }
+    },
+
+    "COMMON": {
+        "BUTTONS": {
+            "HEROES": "Герои",
+            "DASHBOARD": "Меню",
+            "EDIT": "Изменить",
+            "DELETE": "Удалить",
+            "GOBACK": "Назад",
+            "SAVE": "Сохранить"
+        },
+
+        "MESSAGES": {
+            "HEROSERVICE": "Сервис героев"
+        },
+
+        "CLICK": {
+            "CLICKLOG": "Нажмите на список",
+            "CLICKED": "Выбранные строки будут отображаться здесь",
+            "CLICKEDON": "Вы нажали на"
+        }
+    }
+}

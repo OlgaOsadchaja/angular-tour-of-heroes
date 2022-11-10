@@ -10,7 +10,6 @@ export class MessageService {
     if (message.includes('fetched')==false) {
       this.messages.push(message);
     }
-   //console.log(message);
   }
 
   clear() {

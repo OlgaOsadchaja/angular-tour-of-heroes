@@ -1,10 +1,8 @@
 <h1>{{title}}</h1>
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/dashboard">{{ 'BUTTONS.DASHBOARD' | translate }}</a>
+  <a routerLink="/heroes">{{ 'BUTTONS.HEROES' | translate }}</a>
+  {{template}}
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
-
-<!-- <button (click)="useLanguage('en')">en</button>
-<button (click)="useLanguage('ru')">ru</button> -->

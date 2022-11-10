@@ -1,63 +1,63 @@
-<h2>My Heroes</h2>
+<h2>{{ 'LABELS.APP.MYHEROES' | translate }}</h2>
 
 <nav class="newhero">
-  <a routerLink="/hero/new">New Hero</a>
+  <a routerLink="/hero/new">{{ 'LABELS.APP.NEWHERO' | translate }}</a>
 </nav>
 
 <div>
-  <input class="search" placeholder="Search" autocomplete="off" (keyup)="filterData($event)">
+  <input class="search" placeholder="{{ 'LABELS.APP.SEARCH' | translate }}" autocomplete="off" (keyup)="filterData($event)">
   <table mat-table [dataSource]="dataSource" matSort >
     <!-- ID Column -->
     <ng-container matColumnDef="hero-id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.ID' | translate }} </th>
       <td mat-cell *matCellDef="let hero"> {{hero.id}} </td>
     </ng-container>
 
     <!--Name Column -->
     <ng-container matColumnDef="hero-name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.NAME' | translate }} </th>
       <td mat-cell *matCellDef="let hero"> {{hero.name}} </td>
     </ng-container>
 
       <!--HP Column -->
       <ng-container matColumnDef="hero-hp">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> HP </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.HP' | translate }} </th>
         <td mat-cell *matCellDef="let hero"> {{hero.hp}} </td>
       </ng-container>
 
     <!--Level Column -->
     <ng-container matColumnDef="hero-level">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Level </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.LEVEL' | translate }} </th>
       <td mat-cell *matCellDef="let hero"> {{hero.level}} </td>
     </ng-container>
 
     <!--Weapons Column -->
     <ng-container matColumnDef="hero-weapons">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Weapon </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.WEAPON' | translate }} </th>
       <td mat-cell *matCellDef="let hero"> {{hero.weapon}} </td>
     </ng-container>
 
     <!--Stamina Column -->
     <ng-container matColumnDef="hero-stamina">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Stamina </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.STAMINA' | translate }} </th>
       <td mat-cell *matCellDef="let hero"> {{hero.stamina}} </td>
     </ng-container>
 
     <!--Race Column -->
     <ng-container matColumnDef="hero-race">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Race </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'LABELS.TABLE.RACE' | translate }} </th>
       <td mat-cell *matCellDef="let hero"> {{hero.race}} </td>
     </ng-container>
 
     <ng-container matColumnDef="hero-edit">
-      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'COMMON.BUTTONS.EDIT' | translate }} </th>
       <td mat-cell *matCellDef="let hero">
-          <a routerLink="/detail/{{hero.id}}">Edit</a>
+          <a routerLink="/detail/{{hero.id}}">{{ 'COMMON.BUTTONS.EDIT' | translate }}</a>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="hero-delete">
-      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'COMMON.BUTTONS.DELETE' | translate }} </th>
       <td mat-cell *matCellDef="let hero">
         <button type="button" class="delete" title="delete hero"
         (click)="delete(hero)">x</button>
@@ -79,17 +79,17 @@
 
 <div>
   <h3>
-    Click Log
+    {{ 'COMMON.CLICK.CLICKLOG' | translate }}
   </h3>
 </div>
 
 <div *ngIf="!clickedRows.size">
-  Clicked rows will be logged here
+  {{ 'COMMON.CLICK.CLICKED' | translate }}
 </div>
 
 <ul>
   <li *ngFor="let clickedRow of clickedRows">
-    Clicked on {{clickedRow.name}}
+    {{ 'COMMON.CLICK.CLICKEDON' | translate }} {{clickedRow.name}}
   </li>
 </ul>
 

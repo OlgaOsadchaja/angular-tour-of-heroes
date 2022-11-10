@@ -1,4 +1,4 @@
-<h2>Top Heroes</h2>
+<h2>{{ 'LABELS.APP.TOPHEROES' | translate }}</h2>
 <div class="heroes-menu">
   <a *ngFor="let hero of heroes" class="cards"
       routerLink="/detail/{{hero.id}}">
@@ -6,8 +6,8 @@
       <div class="card-data-wrapp {{raceStyle}}">
         <p class="hero-name">{{hero.name}}</p>
         <p>{{hero.race}}</p>
-        <p>HP: {{hero.hp}}</p>
-        <p>Level: {{hero.level}}</p>
+        <p>{{ 'LABELS.TABLE.HP' | translate }}: {{hero.hp}}</p>
+        <p>{{ 'LABELS.TABLE.LEVEL' | translate }}: {{hero.level}}</p>
         <img [src]="getImg(hero.weapon)" alt="card img" class="card-img">
       </div>
     </a>
